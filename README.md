@@ -79,10 +79,14 @@
 4. Using Cluster Scoped Auth
 5. Using Unity Catalog
 
-### How to Create Azure Data Lake Storage
+### How to 
+### Create Azure Data Lake Storage
 1. Follow the steps to Create **Azure Storage Account First** : Create Resource > Storage Account > Create
 2. Choose: Pay As You Go , Choose resource group for the project, name the storage account name unique, Local Redundancy is fine for tutorial, Performance : Standard
 3. Ensure choosing Enable Hierarchical namespace. This helps in organizing storage for Data Lake
 4. Leave deafult option for other tabs
 5. Create folders to contain the data. This is known as the name `Container`. Create Three folders : `raw`, `processed` and `presentation`
+
+### Use Azure Storage Explorer to Interact with Storage
+1. Download Azure Storage Explorer From the `Storage Browser` from the Storage account created from the above steps
    
