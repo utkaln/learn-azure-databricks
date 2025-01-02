@@ -74,7 +74,7 @@
 ## Azure Data Lake
 ### Access to Data Lake Storage
 1. **Using Access Keys** - Gives access to entire storage account
-2. **Using SAS (Shared Access Signature) Tokens** - More granular control compared to that in Access keys. Limits access by type, resource, time, specific source IP address 
+2. **Using SAS (Shared Access Signature) Tokens** - More granular control than Access keys. Limits access by type, resource, time, specific source IP address 
 3. **Using Service Principal** - 
 4. **Using Cluster Scoped Auth** - All the above types of auth can be done using cluster level config, so any notebook in the cluster can access storage account and the contents
 5. **Using Unity Catalog** - 
@@ -92,9 +92,15 @@
 
 ### Databricks Accessing Azure File Storage using Access Key
 1. Azure File storage as an Access Key that Databricks can use to access
-2. Example of Databricks authenticating into file system using access key : `sparks.conf.set("fs.azure.account.key.[storage_account].dfs.core.windows.net","[access_key]")`
-3. Azure expects Databricks to use `abfs` protocol abfs stands for **Azure Blob File System**
-4. Example File path : `dbutils.fs.ls("abfss://[container_name]@[storage_account].dfs.core.windows.net/[folder]/[file_name]")`
+2. Example of Databricks authenticating into file system using access key :
+   ```python
+   sparks.conf.set("fs.azure.account.key.[storage_account].dfs.core.windows.net","[access_key]")
+   ```
+4. Azure expects Databricks to use `abfs` protocol abfs stands for **Azure Blob File System**
+5. Example File path :
+   ```python
+   dbutils.fs.ls("abfss://[container_name]@[storage_account].dfs.core.windows.net/[folder]/[file_name]")
+   ```
 
 ### Databricks Accessing Azure File Storage using SAS Token
 1. Databricks authenticates and retrieves a SAS type of token [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/databricks/connect/storage/azure-storage#sastokens)
