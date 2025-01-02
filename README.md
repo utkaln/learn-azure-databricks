@@ -73,13 +73,13 @@
 
 ## Azure Data Lake
 ### Access to Data Lake Storage
-1. Using Access Keys (Session Scoped)
-2. Using SAS Tokens (Session Scoped)
-3. Using Service Principal (Session Scoped)
-4. Using Cluster Scoped Auth
-5. Using Unity Catalog
+1. **Using Access Keys** - Gives access to entire storage account
+2. **Using SAS (Shared Access Signature) Tokens** - More granular control compared to that in Access keys. Limits access by type, resource, time, specific source IP address 
+3. **Using Service Principal** - 
+4. **Using Cluster Scoped Auth** - All the above types of auth can be done using cluster level config, so any notebook in the cluster can access storage account and the contents
+5. **Using Unity Catalog** - 
 
-### How to 
+## How to 
 ### Create Azure Data Lake Storage
 1. Follow the steps to Create **Azure Storage Account First** : Create Resource > Storage Account > Create
 2. Choose: Pay As You Go , Choose resource group for the project, name the storage account name unique, Local Redundancy is fine for tutorial, Performance : Standard
@@ -87,6 +87,19 @@
 4. Leave deafult option for other tabs
 5. Create folders to contain the data. This is known as the name `Container`. Create Three folders : `raw`, `processed` and `presentation`
 
-### Use Azure Storage Explorer to Interact with Storage
+### Use Azure Storage Explorer to Interact with Storage (Optional but Recommended)
 1. Download Azure Storage Explorer From the `Storage Browser` from the Storage account created from the above steps
+
+### Databricks Accessing Azure File Storage using Access Key
+1. Azure File storage as an Access Key that Databricks can use to access
+2. Example of Databricks authenticating into file system using access key : `sparks.conf.set("fs.azure.account.key.[storage_account].dfs.core.windows.net","[access_key]")`
+3. Azure expects Databricks to use `abfs` protocol abfs stands for **Azure Blob File System**
+4. Example File path : `dbutils.fs.ls("abfss://[container_name]@[storage_account].dfs.core.windows.net/[folder]/[file_name]")`
+
+### Databricks Accessing Azure File Storage using SAS Token
+1. Databricks authenticates and retrieves a SAS type of token [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/databricks/connect/storage/azure-storage#sastokens)
+2. SAS token can be created by going to the exact folder in Azure Storage account and via menu Create SAS Token. It allows access type, timeframe etc.
+
+
+
    
