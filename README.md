@@ -106,6 +106,10 @@
 1. Databricks authenticates and retrieves a SAS type of token [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/databricks/connect/storage/azure-storage#sastokens)
 2. SAS token can be created by going to the exact folder in Azure Storage account and via menu Create SAS Token. It allows access type, timeframe etc.
 
-
+## Manage Secrets using Azure Key Vault 
+1. Add secrets key/ values to **Azure Key Vault**
+2. Link these secret values to Databrics by creating **Databricks Secret Scope**
+    - URL to create databricks secret scope is on the workspace page add the following at the end : `<workspace_url>/secrets/createScope`
+3. Get secrets in the Notebooks by using databricks util package - `dbutils.secrets.get`
 
    
