@@ -112,4 +112,13 @@
     - URL to create databricks secret scope is on the workspace page add the following at the end : `<workspace_url>/secrets/createScope`
 3. Get secrets in the Notebooks by using databricks util package - `dbutils.secrets.get`
 
+---
+# Data Governance
+## Unity Catalog
+- Data Access Control : Allow access as necessary
+- Data Audit : Log data access activities
+- Data Lineage : Manage the journey and transformation of data
+- Data Discoverability : Create schema of data, so easily can be found as required
+
+
    
