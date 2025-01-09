@@ -121,6 +121,7 @@
 - Data Audit : Log data access activities
 - Data Lineage : Manage the journey and transformation of data
 - Data Discoverability : Create a schema of data, so it can easily be found as required
+- More Info - [Databricks Documentation](https://docs.databricks.com/en/data-governance/unity-catalog/index.html)
 
 ### Configuration
 ```mermaid
@@ -144,13 +145,12 @@ flowchart TD
 - Databricks Unity Catalog has Metastore component that uses storage inside Databricks Control Plane for storing all the catalog info. However the Metastore can connect to Azure Data Storage to store any other managed tables. This **recommended** approach to connect to Data Storage is via **Access Connector for Databricks** provided by Azure
 
 ### How to Create
-1. Create **Azure Databricks Workspace** (premium tier)
-2. Create **Azure Data Lake Storage Account**
-3. Create **Azure Access Connector for Databricks**
-4. Assign role of **Storage Blob Data Contributor** to **Access Connector**
-5. Create **Unity Catalog Metastore**
+1. Create **Azure Databricks Workspace** (premium tier) - Create this using Azure Portal GUI
+2. Create **Azure Data Lake Storage Account** - Create this using Azure Portal GUI
+3. Create **Azure Access Connector for Databricks** - Create this using Azure Portal GUI
+4. Assign role of **Storage Blob Data Contributor** to **Access Connector** - Go to the the Storage Account > Access Control > Add Role Assignment > `Storage Blob Data Contributor` > Assign Access to : Managed Identity > Select Members > Access Connector > Select the one created in Step 3 above. Verify role assignment after creation. 
+5. Create **Unity Catalog Metastore** - Navigate to Databricks Accounts at: https://accounts.azuredatabricks.net/ > Catalog > Create **Metastore** > Enter container name of the azure container created ADLS Gen2 path in the format : `[container_name]@[storage_account].dfs.core.windows.net/`
 6. Attach **Databricks Workspace** to **Metastore**
-7. 
 
-
-   
+## Cluster Configuration with Unity Catalog
+- Create cluster from Databricks Workspace as usual. Once unity catalog is attached to a workspace, it should show under the summary to confirm that the cluster supports Unity Catalog
