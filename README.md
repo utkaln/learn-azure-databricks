@@ -123,6 +123,16 @@
 - Data Discoverability : Create a schema of data, so it can easily be found as required
 - More Info - [Databricks Documentation](https://docs.databricks.com/en/data-governance/unity-catalog/index.html)
 
+### Structure
+- Unity catalog stores data in 3 level hierarchy
+    - Catalog
+        - Schema
+            - Tables
+- There are two ways to manage data
+    - Databricks managed tables - Table and Data reside in the default storage account attached Databricks workspace
+    - External Data source - Only table definition stays in Unity catalog, data stays in another storage account
+ 
+      
 ### Configuration
 ```mermaid
 flowchart TD
@@ -154,3 +164,6 @@ flowchart TD
 
 ## Cluster Configuration with Unity Catalog
 - Create cluster from Databricks Workspace as usual. Once unity catalog is attached to a workspace, it should show under the summary to confirm that the cluster supports Unity Catalog
+
+
+- [Useful Databricks commands](./databricks-commands.md)
