@@ -53,4 +53,11 @@ flowchart TD
 ## Integration with External Data Lake 
 - The key difference between Databricks managed data lake is that Databricks houses the data in the default storage account attached with Databricks. And data bricks has more granular control on the data. In case of external location Unity Catalog has access to Data definition, but does not provide Data Lineage option. However the **external location is preferred** since Data Lineage is possible externally, and external location have more controls by the organization on how to secure and control access instead of letting Databricks take full control of the data.
 
-- 
+### Steps to configure External Data Lake from Databricks
+1. Create **Access Connector** in Azure
+2. Create **Storage Account** in Azure to be the location where the external data lake data resides
+3. Add **Storage Blob Data Contributor Role** from Azure IAM on the storage account created in Step 2 to the Access Connector created in Step 1
+4. Create **Storage Credential** in Databricks using the Access Connector Info
+5. Create **External Location** in Databricks
+
+
