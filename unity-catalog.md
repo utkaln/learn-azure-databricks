@@ -60,4 +60,9 @@ flowchart TD
 4. Create **Storage Credential** in Databricks using the Access Connector Info
 5. Create **External Location** in Databricks
 
+#### Important Points to Remember
+- Settings required for Databricks Data Lake:
+    - Enable Hierarchical Namespace
+    - Primary Service: Azure Blob Storage or Azure Data Lake Storage Gen 2
+
 
