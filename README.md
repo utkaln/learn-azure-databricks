@@ -117,6 +117,11 @@
 - [Unity Catalog](./unity-catalog.md)
 
 ---
+# Solution Architecture
+- Reference : https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-modern-analytics-architecture
+  <img width="936" alt="microsoft-azure-databricks-architecture" src="https://github.com/user-attachments/assets/b1c0dfcd-3158-4a23-b658-2ac82692d206" />
 
+
+---
 ## Useful Commands
 - [Useful Databricks commands](./databricks-commands.md)
