@@ -64,5 +64,6 @@ flowchart TD
 - Settings required for Databricks Data Lake:
     - Enable Hierarchical Namespace
     - Primary Service: Azure Blob Storage or Azure Data Lake Storage Gen 2
-
+- Once Storage Account is created, attach the role by going to :
+    - IAM > Add Role Assignment > Role : Storage Blob Data Contributor > Managed Identity > Select Members > Select the Access Connector for Databricks > Save
 
