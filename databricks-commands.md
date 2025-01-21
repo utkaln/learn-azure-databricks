@@ -32,12 +32,12 @@ display(spark.table('<catalog>.<schema>.<table>'))
 
 # Data Ingestion
 #### Spark Read Files
-```spark
+```python
 df = spark.read.csv('abfss://<container>@<storage>.dfs.core.windows.net/raw/<filename.csv>')
 
 ```
 - Make the first row as header
-```spark
+```python
 df = spark.read.option("header",True).csv('abfss://<container>@<storage>.dfs.core.windows.net/raw/<filename.csv>')
 ```
 
@@ -46,7 +46,7 @@ df = spark.read.option("header",True).csv('abfss://<container>@<storage>.dfs.cor
 - StructType is a type to capture the entire row of the data
 - StructField is a data type to capture the individual field name in the row
   
-```spark
+```python
 from pyspark.sql.types import StructType, StructField, IntegerType, DoubleType, StringType
 data_schema = StructType([
   StructField("fieldName1",IntegerType,False),
