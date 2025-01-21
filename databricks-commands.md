@@ -1,3 +1,4 @@
+# Basics I/O
 ## SQL Commands 
 ### Unity Catalog Related Commands
 - Unity catalog maintains data under three hierarchies :
@@ -27,4 +28,14 @@ display(spark.sql('SHOW tables'))
 #  view data from table with a fully qualified name
 %python
 display(spark.table('<catalog>.<schema>.<table>'))
+```
+
+# Data Ingestion
+#### Spark Read Files
+```spark
+df = spark.read.csv('abfss://<container>@<storage>.dfs.core.windows.net/raw/<filename.csv>')
+```
+- Make the first row as header
+```spark
+df = spark.read.option("header",True).csv('abfss://<container>@<storage>.dfs.core.windows.net/raw/<filename.csv>')
 ```
