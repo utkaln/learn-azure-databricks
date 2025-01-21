@@ -123,5 +123,21 @@
 
 
 ---
+# Main Operations of Databricks
+1. Data Ingestion
+2. Data Transformation
+3. Data Presentation
+
+## Data Ingestion
+1. Read Files from Source Storage using Spark - DataSource API to read and prepare Dataframe
+2. Apply Schema
+3. Audit Columns inserted
+4. Ingested Data must be in Columnar format
+5. Data Analysis can be done as SQL operation
+
+## Data Transformation
+
+## Data Presentation
+---
 ## Useful Commands
 - [Useful Databricks commands](./databricks-commands.md)
