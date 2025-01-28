@@ -4,7 +4,9 @@
 - Unity catalog maintains data under three hierarchies :
   - Catalog
     - Schema
-      - Table  
+      - Table
+        
+
 ```SQL
 SHOW CATALOGS
 SHOW SCHEMAS
