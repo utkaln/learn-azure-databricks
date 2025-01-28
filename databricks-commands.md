@@ -75,13 +75,17 @@ renamed_col_df = data_df.withColumnRenamed("og_col_name","new_col_name")
 ```
 
 #### Add a new column with `DataFrame.withColumn()`
+
 - Add timestamp with `current_date`
+  
 ```python
 from pyspark.sql.functions import current_timestamp
 
 updated_col_df = data_df.withColumn("created_timestamp",current_timestamp())
 ```
+
 #### Add a column with a static string using `lit()` function
+
 ```python
 from pyspark.sql.functions import lit
 
@@ -89,10 +93,13 @@ updated_col_df = data_df.withColumn("environment",lit("TEST"))
 ```
 
 #### Write Data to Data Lake in Parquet format
+
 ```python
 updated_col_df.write.parquet("abfss://container@storage_acct.dfs.windows.core.net/file_path")
 ```
+
 - The above command will fail if there is already file existing in the path, to overwrite use the following option
+  
 ```python
 updated_col_df.write.mode("overwrite").parquet("abfss://container@storage_acct.dfs.windows.core.net/file_path")
 ```
